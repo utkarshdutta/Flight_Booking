@@ -1,11 +1,67 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #f2f2f2;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+    h2 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        background-color: #45a29e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+</style>
+<div class="container">
     <h1>Book Flight</h1>
     <h2>Flight from  {{flight.location}} to {{ flight.destination }} on {{ flight.date }}</h2>
     <form method="POST">
         <button type="submit">Book</button>
     </form>
-</body>
-
+</div>
 {% endblock %}
