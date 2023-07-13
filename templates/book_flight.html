@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Book Flight</h1>
+    <h2>Flight from  {{flight.location}} to {{ flight.destination }} on {{ flight.date }}</h2>
+    <form method="POST">
+        <button type="submit">Book</button>
+    </form>
+</body>
+
+{% endblock %}

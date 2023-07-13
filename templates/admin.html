@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f2f2f2;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 800px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+        width: 50%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #45a29e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+<div class="container">
+    <h1>Admin Panel</h1>
+    <form method="POST" action="{{ url_for('admin') }}">
+        <label for="flight_number">Flight Number:</label>
+        <input type="text" id="flight_number" name="flight_number" required>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="available_seats">Available Seats:</label>
+        <input type="number" id="available_seats" name="available_seats" required>
+        <input type="submit" value="Add Flight">
+    </form>
+</div>
+    
+<div class="container">
+    <h2>Remove Flight</h2>
+    <form method="POST" action="{{ url_for('admin') }}">
+        <label for="flight_id">Flight ID:</label>
+        <input type="number" id="flight_id" name="flight_id" required>
+        <input type="submit" value="Remove Flight">
+    </form>
+</div>
+{% endblock content %}
